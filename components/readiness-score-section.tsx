@@ -3,7 +3,6 @@
 import { Clock, Gauge, Shield, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import Image from "next/image"
 
 export default function ReadinessScoreSection() {
   const benefits = [
@@ -70,27 +69,6 @@ export default function ReadinessScoreSection() {
             ))}
           </div>
         </div>
-
-        {/* Testimonial */}
-        <Card className="max-w-3xl mx-auto p-8 bg-white border-l-4 border-orange-500 mb-8">
-          <p className="text-lg text-slate-700 italic mb-4">
-            "AI gives you back your most precious resource: your time & attention. You get to focus on work that
-            matters. Work that brings meaning. Work that requires your uniqueness."
-          </p>
-          <div className="flex items-center gap-4">
-            <Image
-              src="/chris-mccarthy-profile.jpg"
-              alt="Chris McCarthy"
-              width={48}
-              height={48}
-              className="rounded-full object-cover"
-            />
-            <div>
-              <p className="font-semibold text-slate-900">Chris McCarthy</p>
-              <p className="text-sm text-slate-600">Founder & AI Solutions Architect</p>
-            </div>
-          </div>
-        </Card>
 
         {/* CTA */}
         <div className="text-center">

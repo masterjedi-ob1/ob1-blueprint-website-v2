@@ -52,7 +52,7 @@ export default function FinalCTA() {
               size="lg"
               variant="outline"
               className="border-2 border-blue-400 text-blue-400 hover:bg-blue-500 hover:text-white text-xl px-12 py-8 bg-transparent"
-              onClick={() => window.open("https://cal.com/ob1ai/ai-audit-and-analysis", "_blank")}
+              onClick={() => window.open("https://cal.com/ob1ai/diagnostic-discovery", "_blank")}
             >
               Book a Blueprint Session
             </Button>

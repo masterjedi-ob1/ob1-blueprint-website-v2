@@ -35,11 +35,9 @@ export default function HeroSection() {
             <span className="block text-orange-500">Operational Blueprint</span>
           </h1>
 
-          {/* Subheadline */}
           <p className="text-xl text-slate-300 mb-8 max-w-2xl">
-            Your competitors are implementing AI in{" "}
-            <span className="text-orange-500 font-semibold">days, not months</span>. Stop debating. Start building. We
-            turn your AI ambitions into executable plans with 99% accuracy.
+            AI success isn't about the technology, it's about answering the uncomfortable questions first & taking pride
+            in the process. Our OB.1 method gives forward-thinking executives confidence in a chaotic tech chapter.
           </p>
 
           {/* Dual CTA */}
@@ -58,7 +56,7 @@ export default function HeroSection() {
               size="lg"
               variant="outline"
               className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white text-lg px-8 py-6 bg-transparent"
-              onClick={() => window.open("https://cal.com/ob1ai/ai-audit-and-analysis", "_blank")}
+              onClick={() => window.open("https://cal.com/ob1ai/diagnostic-discovery", "_blank")}
             >
               Book a Blueprint Session
             </Button>

@@ -2,18 +2,19 @@
 
 import { Mail, Phone, Linkedin, Facebook, Instagram, MessageCircle } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Footer() {
   const quickLinks = [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Resources", href: "#resources" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "The Workshop", href: "/workshop" },
+    { label: "Contact", href: "https://airtable.com/appdUlBzoWdtw59KU/pagOSNcWAQqsUwe3O/form" },
   ]
 
   const legalLinks = [
+    { label: "Terms & Conditions", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
   ]
 
   const socialLinks = [
@@ -69,9 +70,24 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm hover:text-orange-500 transition-colors">
-                    {link.label}
-                  </a>
+                  {link.href.startsWith("#") ? (
+                    <a href={link.href} className="text-sm hover:text-orange-500 transition-colors">
+                      {link.label}
+                    </a>
+                  ) : link.href.startsWith("http") ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm hover:text-orange-500 transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className="text-sm hover:text-orange-500 transition-colors">
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -129,16 +145,16 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-slate-400">© {new Date().getFullYear()} OB.1 AI Solutions. All rights reserved.</p>
+          <p className="text-sm text-slate-400">© 2026 OB.1 AI Solutions. All rights reserved.</p>
           <div className="flex gap-6">
             {legalLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm text-slate-400 hover:text-orange-500 transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

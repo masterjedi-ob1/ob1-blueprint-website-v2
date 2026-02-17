@@ -91,7 +91,7 @@ export default function ExecutiveFAQ() {
           <p className="text-slate-600 mb-4">Still have questions?</p>
           <button
             className="px-8 py-4 border-2 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white font-semibold rounded-lg transition-colors"
-            onClick={() => window.open("https://cal.com/ob1ai/ai-audit-and-analysis", "_blank")}
+            onClick={() => window.open("https://cal.com/ob1ai/diagnostic-discovery", "_blank")}
           >
             Book a 15-Minute Clarity Call
           </button>
