@@ -47,7 +47,22 @@ Footer:  About (/about) | Services (/services) | The Workshop (/workshop) | Cont
 - **Likely cause:** Placeholder video URLs or missing embed references
 - **Action:** Audit multimedia component, fix broken links/embeds, preview + approve
 
-### P3: Digital Asset Spec (Task 3 — Not Started)
+### P3: Homepage Copy Rewrite
+- **Status:** Waiting on Vibe Marketing system output
+- **Scope:** Hero headline/subheadline, value propositions copy, CTA copy
+- **Files:**
+  - `components/hero-section.tsx` — hero headline + subheadline
+  - `components/value-propositions.tsx` — 3 card titles + descriptions
+  - `components/final-cta.tsx` — CTA headline + body
+- **Action:** Run Vibe Marketing skills → generate copy → swap text → preview → approve
+
+### P4: Homepage "See OB.1 in Action" Media Showcase
+- **Status:** Evaluate after Workshop content proves out
+- **File:** `components/media-showcase.tsx`
+- **Action:** Remove or replace with real content once Workshop multimedia is fixed
+- **Note:** Currently uses stock photos and placeholder video references
+
+### P5: Digital Asset Spec (Task 3 — Not Started)
 - **Status:** Audit was started but interrupted
 - **Action:** Complete the spec below and save to `docs/digital-assets-spec.md`
 
@@ -172,3 +187,28 @@ These files were created during build but are not used in the final About page:
 - `components/card.tsx` — duplicate of `components/ui/card.tsx`
 
 Safe to delete if desired. Not blocking anything.
+
+---
+
+## 6. Design System (DO NOT CHANGE)
+
+```
+Fonts:     Inter (sans) + JetBrains Mono (mono) — locked
+Colors:    oklch tokens in globals.css — locked
+Orange:    orange-500 (#f97316) for CTAs, accents, highlights
+Dark base: slate-950 (homepage/services) | stone-950 (workshop)
+Patterns:  Section labels = orange line + mono text uppercase tracking-widest
+           Headings = text-white with orange-500 span highlights
+           CTAs = orange solid primary + outline secondary
+```
+
+---
+
+## 7. Next Session Plan
+
+**Copy-swap sprint** after Vibe Marketing generates new homepage + about copy:
+1. Run vibe-orchestrator → vibe-brand-voice → vibe-direct-response
+2. Swap homepage hero/value props/CTA copy
+3. Swap about hero copy
+4. Preview → approve → production
+5. Then tackle Workshop content + digital assets
