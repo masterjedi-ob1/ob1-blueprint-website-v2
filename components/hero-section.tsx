@@ -1,7 +1,8 @@
 "use client"
 
-import { ArrowRight, FileCheck } from "lucide-react"
+import { ArrowRight, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function HeroSection() {
   return (
@@ -45,11 +46,13 @@ export default function HeroSection() {
             <Button
               size="lg"
               className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-6"
-              onClick={() => window.open("https://app.auditynow.com/survey/16b293db06d1", "_blank")}
+              asChild
             >
-              <FileCheck className="mr-2 h-5 w-5" />
-              Get My AI Readiness Score
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/snapshot">
+                <Zap className="mr-2 h-5 w-5" />
+                Take the 60-Second Snapshot
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
 
             <Button
@@ -66,7 +69,7 @@ export default function HeroSection() {
           <div className="mt-12 flex items-center gap-8 text-slate-400 text-sm">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse" />
-              <span>Free 5-Min Assessment</span>
+              <span>Free 60-Second Quiz</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 bg-green-500 rounded-full" />

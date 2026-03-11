@@ -10,8 +10,8 @@ export default function BlueprintMethodology() {
       title: "OB.1 AI Triage",
       subtitle: "The Score",
       description:
-        "We establish your baseline operational maturity with our proprietary scoring model. Comprehensive readiness assessment delivered as a strategic report with ROI projections.",
-      timeline: "5 minutes",
+        "Start with our free 60-Second Snapshot to identify your biggest AI opportunity. Ready to go deeper? The full AI Readiness Score delivers a comprehensive diagnostic report with ROI projections.",
+      timeline: "60 seconds",
       partner: "OB.1 Analytics",
       phase: "Phase 0",
     },

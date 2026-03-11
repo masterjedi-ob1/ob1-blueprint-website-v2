@@ -8,8 +8,8 @@ export default function ReadinessScoreSection() {
   const benefits = [
     {
       icon: Clock,
-      title: "5-Minute Assessment",
-      description: "No marathon surveys. Just 12 focused questions about your current state.",
+      title: "60-Second Snapshot",
+      description: "10 focused questions — under 60 seconds. Identify your biggest AI opportunity instantly.",
     },
     {
       icon: Gauge,
@@ -75,10 +75,12 @@ export default function ReadinessScoreSection() {
           <Button
             size="lg"
             className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-8"
-            onClick={() => window.open("https://app.auditynow.com/survey/16b293db06d1", "_blank")}
+            asChild
           >
-            Start Your Assessment
-            <ArrowRight className="ml-2 h-6 w-6" />
+            <a href="/snapshot">
+              Start the 60-Second Snapshot
+              <ArrowRight className="ml-2 h-6 w-6" />
+            </a>
           </Button>
           <p className="mt-4 text-sm text-slate-500">
             Results delivered instantly. No credit card. No follow-up calls unless you want one.

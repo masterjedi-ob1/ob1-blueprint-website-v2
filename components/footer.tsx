@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Phone, Linkedin, Facebook, Instagram, MessageCircle } from "lucide-react"
+import { Mail, Phone, Linkedin, Facebook, Instagram, MessageCircle, Calculator } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -90,6 +90,15 @@ export default function Footer() {
                   )}
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => window.dispatchEvent(new Event("open-waste-calculator"))}
+                  className="text-sm hover:text-orange-500 transition-colors flex items-center gap-2 text-slate-300"
+                >
+                  <Calculator className="h-3.5 w-3.5" />
+                  AI Waste Calculator
+                </button>
+              </li>
             </ul>
           </div>
 

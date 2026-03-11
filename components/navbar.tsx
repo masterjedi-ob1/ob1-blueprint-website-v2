@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, FileCheck } from "lucide-react"
+import { Menu, X, Calculator } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
@@ -55,12 +55,21 @@ export default function Navbar() {
                 </Link>
               ),
             )}
+            <button
+              onClick={() => window.dispatchEvent(new Event("open-waste-calculator"))}
+              aria-label="AI Waste Calculator"
+              title="AI Waste Calculator"
+              className="p-2 border border-slate-600 rounded-md text-white hover:border-orange-500 transition-colors"
+            >
+              <Calculator className="h-5 w-5" />
+            </button>
             <Button
               className="bg-orange-500 hover:bg-orange-600 text-white"
-              onClick={() => window.open("https://app.auditynow.com/survey/16b293db06d1", "_blank")}
+              asChild
             >
-              <FileCheck className="mr-2 h-4 w-4" />
-              Get Readiness Score
+              <Link href="/snapshot">
+                Take the Snapshot
+              </Link>
             </Button>
           </div>
 
@@ -106,15 +115,23 @@ export default function Navbar() {
                   </Link>
                 ),
               )}
+              <button
+                onClick={() => {
+                  window.dispatchEvent(new Event("open-waste-calculator"));
+                  setIsOpen(false);
+                }}
+                className="flex items-center gap-2 text-slate-300 hover:text-orange-500 transition-colors font-medium"
+              >
+                <Calculator className="h-4 w-4" />
+                AI Waste Calculator
+              </button>
               <Button
                 className="bg-orange-500 hover:bg-orange-600 text-white w-full"
-                onClick={() => {
-                  window.open("https://app.auditynow.com/survey/16b293db06d1", "_blank")
-                  setIsOpen(false)
-                }}
+                asChild
               >
-                <FileCheck className="mr-2 h-4 w-4" />
-                Get Readiness Score
+                <Link href="/snapshot" onClick={() => setIsOpen(false)}>
+                  Take the Snapshot
+                </Link>
               </Button>
             </div>
           </div>

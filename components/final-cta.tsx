@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, FileCheck, Shield, MessageSquare, Award } from "lucide-react"
+import { ArrowRight, Zap, Shield, MessageSquare, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function FinalCTA() {
@@ -37,15 +37,17 @@ export default function FinalCTA() {
           </p>
 
           {/* Dual CTA */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-4">
             <Button
               size="lg"
               className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-8 shadow-2xl"
-              onClick={() => window.open("https://app.auditynow.com/survey/16b293db06d1", "_blank")}
+              asChild
             >
-              <FileCheck className="mr-3 h-6 w-6" />
-              Get My AI Readiness Score
-              <ArrowRight className="ml-3 h-6 w-6" />
+              <a href="/snapshot">
+                <Zap className="mr-3 h-6 w-6" />
+                Take the 60-Second Snapshot
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </a>
             </Button>
 
             <Button
@@ -57,6 +59,17 @@ export default function FinalCTA() {
               Book a Blueprint Session
             </Button>
           </div>
+          <p className="text-sm text-[#8B8178] mb-12">
+            Already know your basics?{" "}
+            <a
+              href="https://app.auditynow.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#4A7FB5] underline hover:text-[#D97757] transition-colors"
+            >
+              Take the full AI Readiness Assessment →
+            </a>
+          </p>
 
           {/* Trust Badges */}
           <div className="flex flex-wrap justify-center gap-8 text-slate-300">
@@ -83,8 +96,8 @@ export default function FinalCTA() {
           {/* Final Reassurance */}
           <div className="mt-12 pt-8 border-t border-slate-700">
             <p className="text-slate-400 text-sm">
-              <span className="text-green-400 font-semibold">Free Assessment.</span> No credit card required. No spam.
-              Just your personalized AI roadmap in 5 minutes.
+              <span className="text-green-400 font-semibold">Free 60-Second Quiz.</span> No credit card required. No spam.
+              Just your personalized AI snapshot in under a minute.
             </p>
           </div>
         </div>
