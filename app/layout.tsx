@@ -14,11 +14,9 @@ export const metadata: Metadata = {
     "Transform AI chaos into operational excellence. Get your free AI Readiness Score and build your blueprint in days, not months.",
   generator: "v0.app",
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/favicon.ico", sizes: "64x64" },
-    ],
-    apple: "/apple-touch-icon.png",
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 

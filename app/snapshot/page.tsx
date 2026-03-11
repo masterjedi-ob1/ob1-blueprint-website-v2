@@ -129,28 +129,28 @@ const RESULT_COPY: Record<ResultTier, {
     headline: "Your biggest wins are in the basics.",
     body: "You have significant untapped opportunity. Before deploying AI tools, you need clean processes and clear data flows. The good news: this is exactly where our blueprint methodology delivers the fastest ROI. We'll identify your top 3 quick wins in a single session.",
     cta: "Book a Free Clarity Call",
-    ctaHref: "https://cal.com/chrisatob1/diagnostic-discovery",
+    ctaHref: "https://cal.com/ob1ai/diagnostic-discovery?duration=30",
   },
   emerging: {
     label: "AI EMERGING STAGE",
     headline: "You're ready to move from scattered to systematic.",
     body: "You're using some tools but leaving serious efficiency on the table. The right architecture connecting your existing systems could recover 10+ hours per week per person. Our diagnostic process typically uncovers 3–5 specific automation opportunities in your first week.",
     cta: "See Your Blueprint Options",
-    ctaHref: "https://cal.com/chrisatob1/diagnostic-discovery",
+    ctaHref: "https://cal.com/ob1ai/diagnostic-discovery?duration=30",
   },
   accelerate: {
     label: "AI ACCELERATION STAGE",
     headline: "You have the foundation. Now build the flywheel.",
     body: "Your team is ready and your data is accessible. This is the stage where AI investment delivers 3–5x returns because the infrastructure is already there. A focused 2-week diagnostic will map your highest-leverage opportunities with a build-ready blueprint.",
     cta: "Start Your Diagnostic",
-    ctaHref: "https://cal.com/chrisatob1/diagnostic-discovery",
+    ctaHref: "https://cal.com/ob1ai/diagnostic-discovery?duration=30",
   },
   optimize: {
     label: "AI OPTIMIZATION STAGE",
     headline: "You're ahead of 90% of your market.",
     body: "You have systems and readiness. The next level is optimization, integration, and competitive moats. Our architecture phase is designed exactly for businesses at your stage — connecting your AI layer into a unified operational blueprint that compounds over time.",
     cta: "Talk Architecture",
-    ctaHref: "https://cal.com/chrisatob1/diagnostic-discovery",
+    ctaHref: "https://cal.com/ob1ai/diagnostic-discovery?duration=30",
   },
 };
 
@@ -516,7 +516,7 @@ export default function SnapshotPage() {
                 Want a deeper diagnostic?
               </p>
               <a
-                href="https://app.auditynow.com"
+                href="https://app.auditynow.com/survey/16b293db06d1"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "#4A7FB5", fontSize: "0.875rem", textDecoration: "underline" }}

@@ -152,7 +152,7 @@ export default function WasteCalculatorModal({ onClose }: Props) {
         </div>
 
         <a
-          href="https://cal.com/chrisatob1/diagnostic-discovery"
+          href="https://cal.com/ob1ai/diagnostic-discovery?duration=30"
           target="_blank"
           rel="noopener noreferrer"
           style={{
