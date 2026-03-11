@@ -1,0 +1,21 @@
+{
+  "name": "OB.1 AI Solutions",
+  "short_name": "OB.1 AI",
+  "description": "Operational Blueprint for AI Implementation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D1B2A",
+  "theme_color": "#0D1B2A",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
