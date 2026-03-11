@@ -9,14 +9,26 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" })
 
 export const metadata: Metadata = {
-  title: "OB.1 AI Solutions | Operational Blueprint for AI Implementation",
-  description:
-    "Transform AI chaos into operational excellence. Get your free AI Readiness Score and build your blueprint in days, not months.",
+  title: "Architecting AI Process with Operational Blueprints: OB.1",
+  description: "Architecting AI Process with Operational Blueprints: OB.1",
   generator: "v0.app",
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/favicon.png',
+  },
+  openGraph: {
+    title: "Architecting AI Process with Operational Blueprints: OB.1",
+    description: "Architecting AI Process with Operational Blueprints: OB.1",
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'OB.1 AI Solutions' }],
+    url: 'https://ob1ai.co',
+    siteName: 'OB.1 AI Solutions',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Architecting AI Process with Operational Blueprints: OB.1",
+    description: "Architecting AI Process with Operational Blueprints: OB.1",
+    images: ['/og-image.png'],
   },
 }
 
