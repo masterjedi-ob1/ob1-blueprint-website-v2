@@ -164,45 +164,14 @@ async function captureLeadToLC(data: {
   tier: ResultTier;
   answers: number[];
 }) {
-  const LC_API_KEY = process.env.NEXT_PUBLIC_LC_API_KEY;
-  const LC_LOCATION_ID = process.env.NEXT_PUBLIC_LC_LOCATION_ID;
-
-  if (!LC_API_KEY || !LC_LOCATION_ID) {
-    console.warn("LeadConnector env vars not set — lead not captured");
-    return;
-  }
-
-  const payload = {
-    firstName: data.firstName,
-    lastName: data.lastName,
-    email: data.email,
-    phone: data.phone || "",
-    companyName: data.company || "",
-    locationId: LC_LOCATION_ID,
-    tags: [`snapshot-quiz`, `tier-${data.tier}`, `score-${data.score}`],
-    customFields: [
-      { key: "snapshot_score", field_value: String(data.score) },
-      { key: "snapshot_tier", field_value: data.tier },
-      { key: "snapshot_answers", field_value: data.answers.join(",") },
-    ],
-    source: "60-Second Snapshot — ob1ai.co",
-  };
-
   try {
-    const res = await fetch("https://rest.gohighlevel.com/v1/contacts/", {
+    await fetch("/api/capture-lead", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${LC_API_KEY}`,
-      },
-      body: JSON.stringify(payload),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     });
-    if (!res.ok) {
-      const err = await res.text();
-      console.error("LC capture failed:", err);
-    }
   } catch (e) {
-    console.error("LC capture error:", e);
+    console.error("Lead capture error:", e);
   }
 }
 
