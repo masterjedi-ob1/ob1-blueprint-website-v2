@@ -163,15 +163,22 @@ async function captureLeadToLC(data: {
   score: number;
   tier: ResultTier;
   answers: number[];
-}) {
+}): Promise<boolean> {
   try {
-    await fetch("/api/capture-lead", {
+    const res = await fetch("/api/capture-lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
+    const json = await res.json();
+    if (!json.ok) {
+      console.error("Lead capture failed:", json.error);
+      return false;
+    }
+    return true;
   } catch (e) {
     console.error("Lead capture error:", e);
+    return false;
   }
 }
 

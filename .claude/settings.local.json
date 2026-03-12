@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd C:/Users/admin/Projects/ob1ai/ob1-blueprint-website-v2 && mkdir -p public/docs && cp workshop-pdfs/OB1_Operational_Blueprint_Framework.pdf public/docs/ && cp workshop-pdfs/OB1_AI_Vendor_Selection_Matrix.pdf public/docs/ && ls -la public/docs/)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_run_code",
+      "Bash(curl -s -X POST \"https://rest.gohighlevel.com/v1/contacts/\" \\\\\n  -H \"Content-Type: application/json\" \\\\\n  -H \"Authorization: Bearer pit-65ca4a54-d437-4ce4-8cfd-ce6ba006f6cf\" \\\\\n  -d '{\"firstName\":\"API-Test\",\"email\":\"api-test@ob1ai.co\",\"locationId\":\"IYkKD1qVaeveBulg72Kg\"}' \\\\\n  -w \"\\\\n\\\\nHTTP_STATUS: %{http_code}\")"
+    ]
+  }
+}

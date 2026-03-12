@@ -1,0 +1,26 @@
+Subject: Your AI Snapshot Results Are In
+
+Hi {{contact.name}},
+
+Thanks for taking the OB.1 60-Second AI Snapshot. Your results are ready. Here is where you stand:
+
+---
+
+YOUR AI SCORE: {{snapshot_score}}
+TIER: {{snapshot_tier}}
+
+---
+
+Your tier reflects how your business currently uses AI across operations, strategy, and team readiness. Whether you are just getting started or already running AI workflows, this score gives you a baseline to measure growth against.
+
+The next step is a free Discovery Call where we walk through your results, identify your highest-impact opportunities, and map out a clear path forward.
+
+Book Your Free Discovery Call:
+https://ob1ai.co/book
+
+---
+
+OB.1 AI Solutions
+https://ob1ai.co
+
+To unsubscribe: {{unsubscribe_url}}
