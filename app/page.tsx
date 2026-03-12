@@ -2,7 +2,6 @@ import HeroSection from "@/components/hero-section"
 import ReadinessScoreSection from "@/components/readiness-score-section"
 import BlueprintMethodology from "@/components/blueprint-methodology"
 import ValuePropositions from "@/components/value-propositions"
-import MediaShowcase from "@/components/media-showcase"
 import ExecutiveFAQ from "@/components/executive-faq"
 import FinalCTA from "@/components/final-cta"
 import Navbar from "@/components/navbar"
@@ -16,7 +15,6 @@ export default function HomePage() {
       <ReadinessScoreSection />
       <ValuePropositions />
       <BlueprintMethodology />
-      <MediaShowcase />
       <ExecutiveFAQ />
       <FinalCTA />
       <Footer />

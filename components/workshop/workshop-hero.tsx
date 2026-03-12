@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
-import { Hammer } from "lucide-react"
-import Image from "next/image"
+import { Hammer } from 'lucide-react';
+import Image from 'next/image';
 
 export default function WorkshopHero() {
   return (
@@ -10,13 +10,13 @@ export default function WorkshopHero() {
       <div className="relative min-h-[50vh] md:min-h-[65vh] flex items-end">
         <Image
           src="/images/workshop-hero-bg.png"
-          alt="The Workshop — frameworks, field notes, and honest thinking"
+          alt="The Drafting Table — frameworks, field notes, and honest thinking"
           fill
           className="object-cover"
           priority
         />
 
-        {/* Warm amber-tinted overlay — studio feel, not boardroom */}
+        {/* Warm amber-tinted overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/50 to-stone-900/30" />
         <div className="absolute inset-0 bg-amber-950/10" />
 
@@ -29,26 +29,23 @@ export default function WorkshopHero() {
                 <Hammer className="h-4 w-4 text-orange-400" strokeWidth={1.5} />
               </div>
               <span className="text-[11px] font-mono text-orange-400 uppercase tracking-[0.2em]">
-                The Workshop
+                The Drafting Table
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-5 leading-[1.1] text-balance">
-              Frameworks, Field Notes,
-              <span className="block text-orange-400">{"& Honest Thinking"}</span>
+              The Drafting Table
             </h1>
 
             <p className="text-base md:text-lg text-stone-300 max-w-xl leading-relaxed text-pretty">
-              Resources for leaders building something real with AI.
-              Pull up a chair — the blueprints are on the table.
+              Frameworks, field notes, and honest thinking for leaders building something real with AI.
             </p>
 
             {/* Section anchors */}
             <nav className="mt-10 flex flex-wrap gap-3" aria-label="Workshop sections">
               {[
-                { label: "Blog & Insights", anchor: "#insights" },
-                { label: "Technical Docs", anchor: "#docs" },
-                { label: "Multimedia", anchor: "#multimedia" },
+                { label: 'Blog & Insights', anchor: '#insights' },
+                { label: 'Technical Docs', anchor: '#docs' },
               ].map((item) => (
                 <a
                   key={item.anchor}
@@ -66,5 +63,5 @@ export default function WorkshopHero() {
       {/* Warm accent bar */}
       <div className="h-1 bg-gradient-to-r from-orange-600/40 via-orange-400 to-orange-600/40" />
     </section>
-  )
+  );
 }
