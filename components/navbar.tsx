@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/logo.png" alt="OB.1 AI Solutions" width={480} height={160} className="h-32 w-auto" priority />
+            <Image src="/logo.png" alt="OB.1 AI Solutions" width={120} height={40} className="h-10 w-auto" priority />
           </Link>
 
           {/* Desktop Navigation */}

@@ -9,7 +9,7 @@ export default function WorkshopHero() {
       {/* Full-width hero photograph */}
       <div className="relative min-h-[50vh] md:min-h-[65vh] flex items-end">
         <Image
-          src="/workshop-hero.jpg"
+          src="/images/workshop-hero-bg.png"
           alt="The Workshop — frameworks, field notes, and honest thinking"
           fill
           className="object-cover"

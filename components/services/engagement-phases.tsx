@@ -2,12 +2,15 @@
 
 import { Compass, Landmark, Search, PenTool, FileText, HardHat } from "lucide-react"
 import { Card } from "@/components/ui/card"
+import Image from "next/image"
 
 const phases = [
   {
     number: "01",
     name: "The Survey",
     icon: Compass,
+    image: "/images/phase-01-survey.png",
+    imageAlt: "Phase 01: The Survey — AI Readiness Assessment",
     tagline: "Before we break ground, we survey the terrain.",
     description:
       "Your engagement begins with our AI Readiness Assessment — a structured diagnostic that maps your current operational landscape across six critical dimensions: business context, technology maturity, automation opportunities, data infrastructure, decision-making authority, and investment readiness. This isn't a quiz. It's a site survey for your AI transformation.",
@@ -21,6 +24,8 @@ const phases = [
     number: "02",
     name: "The Foundation",
     icon: Landmark,
+    image: "/images/phase-02-foundation.png",
+    imageAlt: "Phase 02: The Foundation — Stakeholder Discovery",
     tagline: "Every structure needs solid ground.",
     description:
       "With your readiness data in hand, we conduct a stakeholder kickoff and structured discovery engagement. We interview key decision-makers, review existing documentation, and map the human dynamics that determine whether AI initiatives succeed or fail. This phase builds the informational bedrock for everything that follows.",
@@ -35,6 +40,8 @@ const phases = [
     number: "03",
     name: "The Inspection",
     icon: Search,
+    image: "/images/phase-03-diagnostics.png",
+    imageAlt: "Phase 03: The Inspection — Operational Analysis",
     tagline: "We measure twice so you build once.",
     description:
       "Our diagnostic engine analyzes every document, interview transcript, and data point collected during discovery. We identify structural weaknesses, load-bearing processes that can't afford failure, and the specific friction points where AI creates measurable ROI. This is forensic-level operational analysis.",
@@ -49,6 +56,8 @@ const phases = [
     number: "04",
     name: "The Schematic",
     icon: PenTool,
+    image: "/images/phase-04-blueprint.png",
+    imageAlt: "Phase 04: The Schematic — Strategic Engineering Plan",
     tagline: "Translating findings into the plan.",
     description:
       "Analysis without synthesis is just data. This phase transforms raw diagnostic findings into a structured strategic framework — connecting the dots between what we found, what it means, and what to do about it. We build the ROI model, map implementation dependencies, and draft the architectural logic for your AI transformation.",
@@ -63,6 +72,8 @@ const phases = [
     number: "05",
     name: "The Blueprint",
     icon: FileText,
+    image: "/images/phase-05-architecture.png",
+    imageAlt: "Phase 05: The Blueprint — Technical Specifications",
     tagline: "Your master plan, ready to build from.",
     description:
       "The Operational Blueprint is our signature deliverable — a comprehensive, executive-grade document that gives your organization everything it needs to move from strategy to execution. This isn't a slide deck. It's a construction document for your AI future.",
@@ -78,6 +89,8 @@ const phases = [
     number: "06",
     name: "The Build",
     icon: HardHat,
+    image: "/images/phase-06-build.png",
+    imageAlt: "Phase 06: The Build — Phase 1 Execution",
     tagline: "Construction begins.",
     description:
       "For organizations that need hands-on implementation support, we architect the functional systems specified in your Blueprint. Working with our vetted development partners, we translate strategy into working infrastructure — APIs, integrations, workflows, and automation systems built to your exact specifications.",
@@ -157,16 +170,15 @@ export default function EngagementPhases() {
                   {phase.description}
                 </p>
 
-                {/* Image Placeholder */}
-                <div className="mb-6 bg-slate-800/60 border border-dashed border-slate-700 rounded-lg aspect-[16/7] flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-xs font-mono text-slate-600 uppercase tracking-wider">
-                      Image — Phase {phase.number}
-                    </div>
-                    <div className="text-[10px] font-mono text-slate-700 mt-1">
-                      16:7 Aspect Ratio
-                    </div>
-                  </div>
+                {/* Phase Image */}
+                <div className="mb-6 relative w-full aspect-[16/7] rounded-lg overflow-hidden">
+                  <Image
+                    src={phase.image}
+                    alt={phase.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
 
                 {/* Deliverables */}
