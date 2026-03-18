@@ -77,8 +77,8 @@ export default function ReadinessScoreSection() {
             className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-12 py-8"
             asChild
           >
-            <a href="/snapshot">
-              Start the 60-Second Snapshot
+            <a href="https://score.ob1ai.co/survey/16b293db06d1" target="_blank" rel="noopener noreferrer">
+              Start Your Blueprint Assessment
               <ArrowRight className="ml-2 h-6 w-6" />
             </a>
           </Button>

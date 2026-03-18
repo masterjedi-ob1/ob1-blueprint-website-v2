@@ -144,9 +144,9 @@ export default function BlueprintMethodology() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
               className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-orange-500/20"
-              onClick={() => window.open("https://app.auditynow.com/survey/16b293db06d1", "_blank")}
+              onClick={() => window.open("https://score.ob1ai.co/survey/16b293db06d1", "_blank")}
             >
-              Get AI Readiness Score
+              Discover Your AI Readiness
             </button>
             <button
               className="px-8 py-4 border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold rounded-lg transition-all duration-200"
