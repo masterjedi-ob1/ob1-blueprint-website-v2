@@ -64,7 +64,7 @@ export default function Navbar() {
               <Calculator className="h-5 w-5" />
             </button>
             <Button
-              className="bg-orange-500 hover:bg-orange-600 text-white"
+              className="bg-blue-500 hover:bg-blue-600 text-white"
               asChild
             >
               <a href="https://cal.com/ob1ai/diagnostic-discovery" target="_blank" rel="noopener noreferrer">
@@ -126,7 +126,7 @@ export default function Navbar() {
                 AI Waste Calculator
               </button>
               <Button
-                className="bg-orange-500 hover:bg-orange-600 text-white w-full"
+                className="bg-blue-500 hover:bg-blue-600 text-white w-full"
                 asChild
               >
                 <a href="https://cal.com/ob1ai/diagnostic-discovery" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
