@@ -10,10 +10,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
-    { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "The Workshop", href: "/workshop" },
-    { label: "Contact", href: "https://airtable.com/appdUlBzoWdtw59KU/pagOSNcWAQqsUwe3O/form" },
+    { label: "Skill Builder", href: "https://skills.ob1ai.co" },
+    { label: "About", href: "/about" },
   ]
 
   return (
@@ -67,9 +67,9 @@ export default function Navbar() {
               className="bg-orange-500 hover:bg-orange-600 text-white"
               asChild
             >
-              <Link href="/snapshot">
-                Take the Snapshot
-              </Link>
+              <a href="https://cal.com/ob1ai/diagnostic-discovery" target="_blank" rel="noopener noreferrer">
+                BOOK MY BLUEPRINT
+              </a>
             </Button>
           </div>
 
@@ -129,9 +129,9 @@ export default function Navbar() {
                 className="bg-orange-500 hover:bg-orange-600 text-white w-full"
                 asChild
               >
-                <Link href="/snapshot" onClick={() => setIsOpen(false)}>
-                  Take the Snapshot
-                </Link>
+                <a href="https://cal.com/ob1ai/diagnostic-discovery" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                  BOOK MY BLUEPRINT
+                </a>
               </Button>
             </div>
           </div>

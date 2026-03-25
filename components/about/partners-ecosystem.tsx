@@ -29,9 +29,9 @@ const partners = [
     description: "AI-Powered Introductions",
   },
   {
-    name: "MorelandConnect",
-    url: "https://morelandconnect.com",
-    description: "Full-Stack Development",
+    name: "Viable Synergy",
+    url: "https://viablesynergy.com",
+    description: "Revenue Operations & Growth Strategy",
   },
 ]
 
