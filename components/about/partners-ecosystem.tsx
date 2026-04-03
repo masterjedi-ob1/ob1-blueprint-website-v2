@@ -24,9 +24,9 @@ const partners = [
     description: "Creative & Brand Strategy",
   },
   {
-    name: "Ntros.ai",
-    url: "https://ntros.ai",
-    description: "AI-Powered Introductions",
+    name: "Kairos Solutions",
+    url: "https://kairossolutionsai.com",
+    description: "AI/ML Strategy & Data Intelligence",
   },
   {
     name: "Viable Synergy",

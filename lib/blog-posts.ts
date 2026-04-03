@@ -12,6 +12,189 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: 'ADA Web Compliance - April 2026',
+    slug: 'ada-web-compliance-april-2026',
+    date: '2026-04-03',
+    author: 'Chris McCarthy',
+    category: 'Research',
+    tags: ['ADA Compliance', 'WCAG', 'Accessibility', 'AI Agents', 'Legal Risk', 'axe-core'],
+    description:
+      'Legal framework, technical standards, detection tools, agent architecture, violation taxonomy, and market landscape for building an AI-native accessibility scanning and remediation agent. 5,114 ADA lawsuits filed in 2025, 95.9% of top sites failing checks.',
+    ogImage: '/og-image.png',
+    content: `The DOJ's April 2024 Title II rule formally adopted **WCAG 2.1 AA** as the first binding web accessibility standard under the ADA, but only for government entities with a compliance deadline of **April 24, 2026**. For private businesses under Title III, no formal technical standard exists. Yet 5,114 ADA digital accessibility lawsuits were filed in 2025 (a 20%+ increase from 2024), with plaintiff firms using automated tools to identify targets at industrial scale.
+
+| Metric | Value |
+|--------|-------|
+| ADA lawsuits filed (2025) | **5,114** |
+| Issues caught by automation | **57%** |
+| Top 1M sites failing checks | **95.9%** |
+| FTC overlay fine (2025) | **$1M** |
+
+Automated testing catches roughly 57% of real-world accessibility issues by volume (Deque study of 300,000+ issues), though only ~30% of WCAG success criteria are fully automatable. The overlay/widget industry has been definitively discredited: the FTC fined AccessiBe $1 million in April 2025 for false advertising, and 25% of all 2024 ADA lawsuits targeted websites already running overlay tools.
+
+This creates a significant market gap: SMBs need affordable, real remediation between useless $490/year overlays and $100-500/page manual audits. An AI-native scanning agent built on Playwright + axe-core, augmented with LLM-powered judgment for the 60%+ of criteria requiring human review, could fill that gap.
+
+## The Enforcement Paradox
+
+The Trump administration's January 2025 deprioritization of ADA enforcement created a paradox: reduced federal enforcement has accelerated private litigation. The DOJ rescinded 11 ADA guidance documents on March 19, 2025, and announced in September 2025 it would not pursue pending ADA rulemakings. Yet federal website-specific ADA lawsuits surged to 3,117 in 2025 (27% increase), while total digital accessibility lawsuits reached 5,114. Pro se plaintiffs using AI tools to draft complaints increased 40%.
+
+The top 10 plaintiff law firms filed over 80% of federal cases. Multiple legal authorities (Ogletree Deakins, the ABA, Seyfarth Shaw) confirm the Title II rule creates strong precedent pressure for Title III private-sector application. Courts already reference WCAG 2.1 AA as the benchmark in Title III cases despite no formal codification.
+
+## The Safe Harbor Question
+
+> **There is no formal legal safe harbor.** Even the Title II rule explicitly states that WCAG conformance does not immunize entities from all claims. However, WCAG 2.1 AA compliance is the strongest defensible position available. Courts routinely order WCAG compliance as an equitable remedy (as in Robles v. Domino's), and meeting the standard substantially reduces legal exposure.
+
+The gap between "no safe harbor exists" and "this is what every court references" represents a core legal gray area any AI agent should help clients navigate.
+
+## Automation Ceiling
+
+Automated tools detect ~30% of WCAG success criteria fully and ~44% partially, leaving ~36% requiring human review. However, measured by issue volume, automation catches 57% of real-world problems because the most common violations (missing alt text on 55.5% of sites, low contrast on 79.1%, missing form labels on 48.2%) happen to be automatable and occur at enormous scale.
+
+The WebAIM Million 2026 study found an average of 56.1 errors per homepage, with 95.9% of the top million sites failing automated checks. An AI layer analyzing axe-core's "needs review" items could push practical coverage toward 70-80%.
+
+## Tool Comparison Matrix
+
+| Dimension | axe-core | WAVE API | Lighthouse | Pa11y | IBM Equal Access |
+|-----------|----------|----------|------------|-------|------------------|
+| Vendor | Deque Systems | WebAIM | Google | Community OSS | IBM |
+| License | MPL-2.0 (free) | Free ext / paid API | Apache 2.0 | LGPL-3.0 | Apache 2.0 |
+| WCAG ver. | 2.0, 2.1, 2.2 | 2.2 A/AA | 2.0, 2.1 A/AA | 2.0, 2.1 AA | 2.2 A/AA |
+| Rules | 90+ rules | Proprietary set | ~50+ audits | Varies by runner | Proprietary set |
+| Detection | ~57% real-world | ~30-40% | Less than axe | Varies by engine | Comparable |
+| False pos. | Zero FP design | More alerts | Binary pass/fail | Errors + Warnings | Violation/Review |
+| Cost | Free (Pro $500+/yr) | $0.025/credit | Free | Free | Free |
+| Best for | Primary engine | Visual QA | Quick baseline | Site-wide CLI | Enterprise reports |
+
+**Recommended stack:** Primary engine: **axe-core via @axe-core/playwright**. This combination provides the industry-standard rule set (90+ rules, WCAG 2.2), the best browser automation framework (Playwright: cross-browser, auto-wait, Shadow DOM piercing, ARIA snapshots), and 2.5M+ weekly npm downloads confirming production maturity.
+
+## Agent Architecture Recommendation
+
+### Crawling Layer: Playwright (Chromium)
+
+Playwright is the unambiguous choice over Puppeteer (Chrome-only, declining) and Selenium (legacy). Key advantages: native ARIA snapshot output (YAML accessibility tree), Shadow DOM piercing via Locator API, cross-browser testing (Chromium + Firefox + WebKit), built-in auto-wait that eliminates flakiness with SPAs, network interception for script injection, and browserContext.storageState for authenticated scanning.
+
+### Detection Layer: axe-core + CDP Accessibility Tree
+
+Run @axe-core/playwright with tags [wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa] on each rendered page. Simultaneously extract the full accessibility tree via Chrome DevTools Protocol (Accessibility.getFullAXTree). The axe-core results provide structured violation data with impact levels; the CDP tree provides the semantic structure for AI analysis.
+
+### AI Analysis Layer: LLM Integration
+
+This is where an AI agent differentiates from existing tools. Pass axe-core's "needs review" items plus the accessibility tree context to an LLM for:
+
+- Alt text quality evaluation (not just presence)
+- Heading hierarchy semantic assessment
+- ARIA pattern correctness beyond syntax
+- Color context interpretation
+- Natural-language remediation guidance
+- VPAT pre-population from scan data
+
+This could push practical coverage from 57% toward 70-80%, a meaningful improvement over any existing tool.
+
+### SPA-Specific Handling
+
+SPAs (React, Vue, Angular) require special treatment because client-side routing doesn't trigger full page loads, so screen readers receive no navigation signal. The scanner must simulate navigation events and wait for route transitions, test focus management after navigation, detect ARIA live regions, and check that document.title updates per route. Pages using ARIA had 57 errors on average versus 27 for pages without ARIA (WebAIM 2025), confirming that misused ARIA is worse than none.
+
+## The "Big Six": 96% of Automatically Detected Errors
+
+These six violation categories account for the vast majority of detected issues.
+
+| Violation | WCAG | Sites Affected | Avg/Page | Legal Risk |
+|-----------|------|----------------|----------|------------|
+| Missing/poor alt text | 1.1.1 (A) | 55.5% | 11 | Very High |
+| Insufficient contrast | 1.4.3 (AA) | 79.1% | 29.6 | Very High |
+| Empty links/buttons | 2.4.4 / 4.1.2 | 45.4% / 29.6% | N/A | High |
+| Missing form labels | 1.3.1 / 4.1.2 | 48.2% | N/A | Very High |
+| Missing doc language | 3.1.1 (A) | 15.8% | 1 | Medium |
+| Skipped headings | 1.3.1 (A) | 39% | N/A | Low-Med |
+
+## Legal Risk Map
+
+Based on lawsuit filing data from UsableNet, Seyfarth Shaw, and settlement reports, ranked by frequency:
+
+| Rank | Violation | Legal Risk | Notes |
+|------|-----------|------------|-------|
+| 1 | Missing alt text on images | Critical | Cited in virtually every ADA complaint |
+| 2 | Screen reader incompatibility | Critical | Missing accessible names, broken roles |
+| 3 | Keyboard nav failures | Critical | Transaction completion barriers |
+| 4 | Missing form labels | Very High | 48.2% of sites affected |
+| 5 | Insufficient contrast | Very High | 79.1% of sites; sheer volume |
+| 6 | Missing video captions | High | Growing as video becomes ubiquitous |
+| 7 | Empty links/buttons | High | Navigation barriers |
+
+### Industry Targeting Patterns
+
+E-commerce and retail account for **77% of ADA website lawsuits**. Serial plaintiffs deliberately target small businesses with standardized demand letters. **77% target sub-$25M revenue companies.** Illinois saw **746% filing growth** in 2025 as plaintiff firms migrated from NY federal courts.
+
+### Settlement and Defense Costs
+
+> **Typical settlements:** $5,000 to $75,000 plus attorney fees and mandatory website remediation. For every filed lawsuit, approximately 10 demand letters are sent, typically settling for $5,000 to $20,000. Legal defense costs add $10,000 to $50,000+. Total cost including remediation ranges from $20,000 to $200,000+.
+
+**Key finding:** 25% of 2024 lawsuits targeted sites already using overlay widgets. Courts have interpreted overlay installation as documenting awareness of accessibility issues while choosing a cosmetic fix, potentially establishing willful negligence.
+
+## Where AI Can Push the Boundary
+
+An LLM-augmented agent can meaningfully address the "partially automatable" middle tier (~44% of criteria):
+
+- **Alt text quality assessment:** evaluate whether existing alt text meaningfully describes image content in context
+- **Heading hierarchy semantics:** beyond checking for skipped levels, assess whether structure logically represents content
+- **ARIA pattern correctness:** determine whether custom ARIA implementations follow WAI-ARIA Authoring Practices semantically
+- **Link purpose evaluation:** NLP assessment of whether link text provides sufficient context
+- **Focus order logic:** combining tab order extraction with page layout analysis to flag illogical sequences
+- **VPAT pre-population:** generating draft Accessibility Conformance Reports from scan data
+
+## Market Positioning
+
+The digital accessibility software market reached $0.80 billion in 2025, projected to $1.08 billion by 2030 (6.31% CAGR). The three biggest gaps an AI-native agent could fill:
+
+- **Source-code remediation at SMB price points** ($5K-15K/year versus $100-500/page manual audits)
+- **Context-aware alt text and semantic understanding** beyond binary presence checking
+- **Continuous compliance with natural-language developer guidance** embedded in CI/CD workflows
+
+Enterprise buyers expect VPATs, continuous monitoring, and Jira integration. SMBs need affordable, real fixes. The 77% of lawsuits targeting sub-$25M-revenue companies represents an underserved market trapped between useless overlays and unaffordable enterprise solutions.
+
+## Recent Regulatory Changes (Last 18 Months)
+
+- DOJ rescinded 11 ADA guidance documents (March 2025) and will not pursue pending rulemakings
+- Title II compliance deadline of April 24, 2026 is imminent
+- FTC fined AccessiBe $1M (April 2025): first federal regulatory action against an overlay vendor
+- European Accessibility Act enforcement began June 28, 2025 with extraterritorial reach to US companies
+- ADA lawsuit volume surged: 5,114 total in 2025, H1 2025 up 37% YoY, Illinois filings up 746%
+- WCAG 2.2 published October 2023: 9 new criteria, 4.1.1 Parsing declared obsolete
+- WCAG 3.0 Working Draft updated September 2025, finalization not expected before 2028
+- WebAIM Million 2026: accessibility regression, 95.9% failure rate (up from 94.8%), 56.1 errors/page
+
+---
+
+*[Download the full 16-page Technical Research Brief (PDF)](/docs/OB1_ADA_Compliance_Research_Brief.pdf) for the complete WCAG 2.1 standards reference sheet, detailed violation taxonomy with fix templates, and the full agent architecture recommendation.*
+
+---
+
+*Need help assessing your website's accessibility risk? [Take the 60-Second Snapshot](https://app.auditynow.com/survey/16b293db06d1) to see where you stand, or [book a Blueprint Session](https://airtable.com/appdUlBzoWdtw59KU/pagOSNcWAQqsUwe3O/form) to map your compliance roadmap.*
+
+## FAQ
+
+**How many ADA website lawsuits were filed in 2025?**
+5,114 ADA digital accessibility lawsuits were filed in 2025, a 20%+ increase from 2024. Federal website-specific lawsuits surged to 3,117, up 27%.
+
+**What percentage of websites fail accessibility checks?**
+95.9% of the top 1 million websites fail automated accessibility checks according to the WebAIM Million 2026 study, with an average of 56.1 errors per homepage.
+
+**What is the recommended tool for automated accessibility scanning?**
+axe-core via @axe-core/playwright is the recommended primary engine. It provides 90+ rules covering WCAG 2.2, zero false-positive design philosophy, and 2.5M+ weekly npm downloads.
+
+**Do accessibility overlays actually work?**
+No. The FTC fined AccessiBe $1 million in April 2025 for false advertising, and 25% of all 2024 ADA lawsuits targeted websites already running overlay tools. Courts view overlays as cosmetic fixes that may establish willful negligence.
+
+**Is there a legal safe harbor for WCAG compliance?**
+No formal safe harbor exists. However, WCAG 2.1 AA compliance is the strongest defensible position. Courts routinely order WCAG compliance as an equitable remedy, and meeting the standard substantially reduces legal exposure.
+
+**What does an ADA lawsuit typically cost?**
+Typical settlements range from $5,000 to $75,000 plus attorney fees and mandatory remediation. Total costs including legal defense and website fixes range from $20,000 to $200,000+.
+
+**What percentage of accessibility issues can automation catch?**
+Automated tools catch roughly 57% of real-world accessibility issues by volume. Only ~30% of WCAG success criteria are fully automatable, but the most common violations happen to be automatable.`,
+  },
+  {
     title: 'OpenClaw: The Viral AI Agent Taking Over Your Terminal (And Why You Should Be Careful)',
     slug: 'openclaw-viral-ai-agent-terminal-security',
     date: '2026-03-10',

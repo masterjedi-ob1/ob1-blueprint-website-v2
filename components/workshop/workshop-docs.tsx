@@ -6,6 +6,18 @@ import { LeadCaptureModal } from '@/components/LeadCaptureModal';
 
 const whitepapers = [
   {
+    title: 'ADA Web Compliance - April 2026',
+    description:
+      'Legal framework, technical standards, detection tools, agent architecture, violation taxonomy, and market landscape for building an AI-native accessibility scanning and remediation agent.',
+    pages: 16,
+    format: 'PDF',
+    size: '37.5 KB',
+    published: 'April 2026',
+    access: 'free' as const,
+    topics: ['ADA Compliance', 'WCAG 2.2', 'AI Agent Architecture'],
+    href: '/docs/OB1_ADA_Compliance_Research_Brief.pdf',
+  },
+  {
     title: 'The OB.1 Operational Blueprint: A Framework for AI-Powered Transformation',
     description:
       'Complete technical documentation of our 5-phase methodology, including case studies, ROI projections, and implementation timelines.',
