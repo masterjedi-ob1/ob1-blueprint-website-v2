@@ -70,6 +70,12 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-KQWX6QCQ');`}
         </Script>
+        <Script
+          id="ghl-tracking"
+          src="https://link.coachfoundation.com/js/external-tracking.js"
+          data-tracking-id="tk_3fb3dd11ee5f430aa369b7829ce0f027"
+          strategy="afterInteractive"
+        />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KQWX6QCQ"
