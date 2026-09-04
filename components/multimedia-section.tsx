@@ -24,7 +24,7 @@ const multimediaContent = [
     duration: "18 min",
     format: "Screen Recording",
     thumbnail: "/business-analytics-dashboard.png",
-    link: "https://app.auditynow.com/survey/16b293db06d1",
+    link: "https://score.ob1ai.co/survey/16b293db06d1",
     date: "Nov 2024",
   },
   {
@@ -203,7 +203,7 @@ export default function MultimediaSection() {
             </p>
             <Button
               className="bg-orange-600 hover:bg-orange-700 text-white border-2 border-orange-800 text-lg px-8 py-6"
-              onClick={() => window.open("https://app.auditynow.com/survey/16b293db06d1", "_blank")}
+              onClick={() => window.open("https://score.ob1ai.co/survey/16b293db06d1", "_blank")}
             >
               <Presentation className="h-5 w-5 mr-2" />
               Get Your AI Readiness Score

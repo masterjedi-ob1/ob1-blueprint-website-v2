@@ -30,7 +30,7 @@ const multimediaContent = [
     duration: "18 min",
     format: "Screen Recording",
     thumbnail: "/business-analytics-dashboard.png",
-    href: "https://app.auditynow.com/survey/16b293db06d1",
+    href: "https://score.ob1ai.co/survey/16b293db06d1",
     external: true,
     date: "Nov 2024",
   },
