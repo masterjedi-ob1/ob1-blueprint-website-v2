@@ -157,6 +157,9 @@ const RESULT_COPY: Record<ResultTier, {
   },
 };
 
+// Clickwrap assent recorded with every Snapshot submission (WEB-20260904-03).
+const TERMS_VERSION = "v1.0-2026-08-25";
+
 async function captureLeadToLC(data: {
   firstName: string;
   lastName: string;
@@ -166,6 +169,8 @@ async function captureLeadToLC(data: {
   score: number;
   tier: ResultTier;
   answers: number[];
+  terms_accepted: boolean;
+  terms_version: string;
 }): Promise<boolean> {
   try {
     const res = await fetch("/api/capture-lead", {
@@ -197,6 +202,7 @@ export default function SnapshotPage() {
     phone: "",
     company: "",
   });
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [score, setScore] = useState(0);
   const [tier, setTier] = useState<ResultTier>("foundation");
@@ -226,9 +232,16 @@ export default function SnapshotPage() {
 
   async function handleCapture(e: React.FormEvent) {
     e.preventDefault();
-    if (!leadData.firstName || !leadData.email) return;
+    if (!leadData.firstName || !leadData.email || !termsAccepted) return;
     setSubmitting(true);
-    await captureLeadToLC({ ...leadData, score, tier, answers });
+    await captureLeadToLC({
+      ...leadData,
+      score,
+      tier,
+      answers,
+      terms_accepted: true,
+      terms_version: TERMS_VERSION,
+    });
     setSubmitting(false);
     setStep("result");
   }
@@ -437,9 +450,31 @@ export default function SnapshotPage() {
                 onChange={(e) => setLeadData({ ...leadData, phone: e.target.value })}
                 style={inputStyle}
               />
+              <label htmlFor="terms-accept" style={consentLabelStyle}>
+                <input
+                  id="terms-accept"
+                  name="terms-accept"
+                  type="checkbox"
+                  required
+                  checked={termsAccepted}
+                  onChange={(e) => setTermsAccepted(e.target.checked)}
+                  style={consentCheckboxStyle}
+                />
+                <span>
+                  By submitting, you agree to our{" "}
+                  <a href="/terms" target="_blank" rel="noopener noreferrer" style={consentLinkStyle}>
+                    Terms of Use
+                  </a>{" "}
+                  and{" "}
+                  <a href="/privacy" target="_blank" rel="noopener noreferrer" style={consentLinkStyle}>
+                    Privacy Policy
+                  </a>
+                  .
+                </span>
+              </label>
               <button
                 type="submit"
-                disabled={submitting}
+                disabled={submitting || !termsAccepted}
                 style={{
                   background: "#D97757",
                   color: "#FFFFFF",
@@ -448,8 +483,8 @@ export default function SnapshotPage() {
                   padding: "1rem 2rem",
                   fontSize: "1rem",
                   fontWeight: 700,
-                  cursor: submitting ? "not-allowed" : "pointer",
-                  opacity: submitting ? 0.7 : 1,
+                  cursor: submitting || !termsAccepted ? "not-allowed" : "pointer",
+                  opacity: submitting || !termsAccepted ? 0.7 : 1,
                   marginTop: "0.5rem",
                 }}
               >
@@ -554,6 +589,32 @@ export default function SnapshotPage() {
     </main>
   );
 }
+
+const consentLabelStyle: React.CSSProperties = {
+  display: "flex",
+  alignItems: "flex-start",
+  gap: "0.625rem",
+  cursor: "pointer",
+  color: "#3D3832",
+  fontSize: "0.875rem",
+  lineHeight: 1.5,
+  marginTop: "0.25rem",
+};
+
+const consentCheckboxStyle: React.CSSProperties = {
+  width: "1.125rem",
+  height: "1.125rem",
+  marginTop: "0.125rem",
+  flexShrink: 0,
+  accentColor: "#D97757",
+  cursor: "pointer",
+};
+
+const consentLinkStyle: React.CSSProperties = {
+  color: "#D97757",
+  fontWeight: 600,
+  textDecoration: "underline",
+};
 
 const inputStyle: React.CSSProperties = {
   background: "#FFFFFF",

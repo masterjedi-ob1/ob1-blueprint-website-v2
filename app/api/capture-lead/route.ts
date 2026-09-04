@@ -28,7 +28,13 @@ export async function POST(req: NextRequest) {
     score: number;
     tier: string;
     answers: number[];
+    terms_accepted?: boolean;
+    terms_version?: string;
   };
+
+  // Clickwrap assent captured on the Snapshot form (WEB-20260904-03).
+  const termsAccepted = data.terms_accepted === true;
+  const termsVersion = termsAccepted ? data.terms_version || "unversioned" : "";
 
   const contactPayload = {
     firstName: data.firstName,
@@ -63,6 +69,12 @@ export async function POST(req: NextRequest) {
 
     // Step 2: Add tags via v2 API
     const tags = ["snapshot-quiz", `tier-${data.tier}`, `score-${data.score}`];
+    // Assent is tagged as well as written to custom fields: tags always persist in
+    // LeadConnector, so the record of consent survives even if the custom fields
+    // have not been created in the location.
+    if (termsAccepted) {
+      tags.push(`terms-accepted-${termsVersion}`);
+    }
     const tagRes = await fetch(`${LC_BASE_URL}/contacts/${contactId}/tags`, {
       method: "POST",
       headers: {
@@ -83,6 +95,8 @@ export async function POST(req: NextRequest) {
         { key: "snapshot_score", field_value: String(data.score) },
         { key: "snapshot_tier", field_value: data.tier },
         { key: "snapshot_answers", field_value: data.answers.join(",") },
+        { key: "terms_accepted", field_value: String(termsAccepted) },
+        { key: "terms_version", field_value: termsVersion },
       ],
     };
 
@@ -100,7 +114,15 @@ export async function POST(req: NextRequest) {
       console.warn("LC custom field update failed:", updateRes.status, await updateRes.text());
     }
 
-    console.log("LC lead captured:", contactId, data.email, `score=${data.score}`, `tier=${data.tier}`);
+    console.log(
+      "LC lead captured:",
+      contactId,
+      data.email,
+      `score=${data.score}`,
+      `tier=${data.tier}`,
+      `terms_accepted=${termsAccepted}`,
+      `terms_version=${termsVersion}`,
+    );
     return NextResponse.json({ ok: true, contactId });
   } catch (e) {
     console.error("LC capture error:", e);
