@@ -6,7 +6,7 @@ import GovernanceContent from "@/components/governance/governance-content"
 export const metadata: Metadata = {
   title: "AI Governance | OB.1 AI Solutions: Governance as a Service",
   description:
-    "Governance-as-a-Service for mid-market operators in regulated industries. Ten governance checkpoints, industry-specific governance rubrics, and legal review through our AI Regulations & Legal Governance partner, Frantz Ward.",
+    "Governance-as-a-Service for mid-market operators in regulated industries. Ten governance checkpoints, industry-specific governance rubrics, and legal review by outside AI regulations counsel.",
   openGraph: {
     title: "AI Governance | OB.1 AI Solutions: Governance as a Service",
     description:
