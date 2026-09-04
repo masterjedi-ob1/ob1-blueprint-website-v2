@@ -1,0 +1,18 @@
+# OB.1 AI Solutions
+
+> Audit-first AI consulting and Governance as a Service (GaaS) for mid-market companies. Rules Before Tools: OB.1 maps, governs, and monitors AI adoption before tools get deployed, with a lawyer-in-the-loop methodology.
+
+OB.1 AI Solutions helps mid-market executives (CEO, COO, CRO, CCO, General Counsel, CISO) in finance, insurance, healthcare, manufacturing, and professional services adopt AI safely. The signature deliverable is the Operational Blueprint: a diagnostic that produces an AI readiness scorecard, a prioritized opportunity map, and an implementation roadmap. Governance as a Service extends that into continuous, adaptive governance: policy generation, agentic monitoring of business data, and ongoing compliance support. Based in Northeast Ohio, serving the United States.
+
+## Pages
+
+- [Home](https://ob1ai.co/): Company overview and AI readiness assessment
+- [Services](https://ob1ai.co/services): The Operational Blueprint engagement model, from diagnostic to build
+- [About](https://ob1ai.co/about): Company background and founder Chris McCarthy
+- [The Workshop](https://ob1ai.co/workshop): Content and resources
+
+## Contact
+
+- Email: admin@ob1ai.co
+- Phone: +1 (234) 602-0500
+- LinkedIn: https://www.linkedin.com/company/ob1-ai
