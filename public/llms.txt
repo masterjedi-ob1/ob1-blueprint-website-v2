@@ -1,13 +1,15 @@
 # OB.1 AI Solutions
 
-> Audit-first AI consulting and Governance as a Service (GaaS) for mid-market companies. Rules Before Tools: OB.1 maps, governs, and monitors AI adoption before tools get deployed, with a lawyer-in-the-loop methodology.
+> The AI governance firm for small and mid-market companies. Rules Before Tools: OB.1 scores your AI readiness, writes your governance blueprint, and then stays to run it.
 
-OB.1 AI Solutions helps mid-market executives (CEO, COO, CRO, CCO, General Counsel, CISO) in finance, insurance, healthcare, manufacturing, and professional services adopt AI safely. The signature deliverable is the Operational Blueprint: a diagnostic that produces an AI readiness scorecard, a prioritized opportunity map, and an implementation roadmap. Governance as a Service extends that into continuous, adaptive governance: policy generation, agentic monitoring of business data, and ongoing compliance support. Based in Northeast Ohio, serving the United States.
+OB.1 AI Solutions helps executives govern AI adoption: CEO, COO, General Counsel, CISO. Law firms come first, then health care and professional services. Manufacturing engagements stand as proof of method. The path in is simple. Take the free 60-second Snapshot. Continue to the full AI Readiness Score, 0 to 100 across six dimensions. Then book the Operational Blueprint, a two-week engagement. It delivers a scored baseline, stakeholder evidence, and a roadmap your board can act on. The product ladder is Diagnostic, Blueprint, Architect, Govern. Governance as a Service runs the controls after the Blueprint: policy management, runtime monitoring, escalation design, compliance alignment, and quarterly reports a board can cite. Outside AI regulations counsel reviews every industry rubric. OB.1 designs and governs. Vetted partners build, so we sell no build hours and our advice stays neutral. Plenty of firms will score your AI readiness and leave. OB.1 stays. Based in Northeast Ohio, serving the United States.
 
 ## Pages
 
-- [Home](https://ob1ai.co/): Company overview and AI readiness assessment
-- [Services](https://ob1ai.co/services): The Operational Blueprint engagement model, from diagnostic to build
+- [Home](https://ob1ai.co/): Company overview and the 60-second Snapshot
+- [Services](https://ob1ai.co/services): The Operational Blueprint engagement, from diagnostic to roadmap
+- [Governance](https://ob1ai.co/governance): Governance as a Service, the layer that stays
+- [Snapshot](https://ob1ai.co/snapshot): Free 60-second AI readiness quiz
 - [About](https://ob1ai.co/about): Company background and founder Chris McCarthy
 - [The Workshop](https://ob1ai.co/workshop): Content and resources
 

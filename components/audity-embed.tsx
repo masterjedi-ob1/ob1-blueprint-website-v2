@@ -45,7 +45,7 @@ export default function AudityEmbed() {
     <div className="relative w-full" style={{ height: "800px" }}>
       <iframe
         id="audity-survey"
-        src="https://app.auditynow.com/survey/16b293db06d1"
+        src="https://score.ob1ai.co/survey/16b293db06d1"
         className="w-full h-full border-0 rounded-lg shadow-lg"
         title="AI Readiness Score Assessment"
         allow="fullscreen"

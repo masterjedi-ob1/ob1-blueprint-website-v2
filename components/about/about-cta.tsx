@@ -11,7 +11,7 @@ export default function AboutCTA() {
       subhead="Start with a conversation. No pitch, no pressure, just clarity on where you stand and what's possible."
       primary={{
         label: "Get Your AI Readiness Score",
-        href: "https://app.auditynow.com/survey/16b293db06d1",
+        href: "https://score.ob1ai.co/survey/16b293db06d1",
         icon: "fileCheck",
       }}
       secondary={{

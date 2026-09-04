@@ -223,7 +223,7 @@ export default function GovernanceContent() {
               </div>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://app.auditynow.com/survey/16b293db06d1"
+                  href="https://score.ob1ai.co/survey/16b293db06d1"
                   className="inline-flex items-center gap-2 min-h-[44px] cursor-pointer rounded bg-orange-500 px-6 py-3.5 text-sm font-bold tracking-wide text-white transition-colors duration-200 hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
                 >
                   Get Your AI Readiness Score

@@ -169,7 +169,7 @@ Enterprise buyers expect VPATs, continuous monitoring, and Jira integration. SMB
 
 ---
 
-*Need help assessing your website's accessibility risk? [Take the 60-Second Snapshot](https://app.auditynow.com/survey/16b293db06d1) to see where you stand, or [book a Blueprint Session](https://airtable.com/appdUlBzoWdtw59KU/pagOSNcWAQqsUwe3O/form) to map your compliance roadmap.*
+*Need help assessing your website's accessibility risk? [Take the 60-Second Snapshot](https://score.ob1ai.co/survey/16b293db06d1) to see where you stand, or [book a Blueprint Session](https://airtable.com/appdUlBzoWdtw59KU/pagOSNcWAQqsUwe3O/form) to map your compliance roadmap.*
 
 ## FAQ
 
