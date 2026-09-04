@@ -3,12 +3,10 @@
 import { ArrowUpRight } from "lucide-react"
 
 const partners = [
-  {
-    name: "Frantz Ward LLP",
-    url: "https://www.frantzward.com",
-    description: "AI Regulations & Legal Governance",
-    featured: true,
-  },
+  // Frantz Ward LLP partner entry temporarily removed 2026-09-04 (WEB-20260904-05)
+  // pending Frantz Ward ethics dept green light on the public partnership
+  // reference. Matches the 2026-07-09 removal on /governance. Entry preserved
+  // in git history; restore when approved.
   {
     name: "CAO Advisory Services",
     url: "https://caoadvisoryllc.com",
@@ -96,8 +94,8 @@ export default function PartnersEcosystem() {
           </div>
 
           <p className="mt-8 text-center text-sm text-slate-500 leading-relaxed">
-            Every industry governance rubric we publish is gated by counsel
-            review through Frantz Ward.{" "}
+            Every industry governance rubric we publish is gated by review from
+            outside AI regulations counsel.{" "}
             <a href="/governance" className="text-orange-400 hover:text-orange-300 transition-colors font-medium">
               See how governance works
             </a>
